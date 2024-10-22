@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descarga la app turística de Colombia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            background-color: #DF8225;
+            color: white;
+            padding: 20px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header img {
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+            width: 60px;
+            height: auto;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin: 0;
+        }
+
+        section {
+            margin: 40px 20px;
+        }
+
+        h2 {
+            color: #ff5722;
+            font-size: 1.8em;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .app-image {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+        }
+
+        .download-btn {
+            background-color: #ff5722;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background-color: #e64a19;
+        }
+
+        .language-select {
+            margin-top: 20px;
+        }
+
+        .language-select select {
+            padding: 10px;
+            font-size: 1em;
+        }
+
+        footer {
+            background-color: #DF8225;
+            color: white;
+            padding: 10px;
+            margin-top: 40px;
+        }
+
+        /* Media Queries para dispositivos más pequeños */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            header img {
+                position: static;
+                transform: none;
+                margin-bottom: 10px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            p {
+                font-size: 1em;
+            }
+
+            .download-btn {
+                padding: 10px 20px;
+                font-size: 1em;
+            }
+
+            .app-image {
+                max-width: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.3em;
+            }
+
+            h2 {
+                font-size: 1.2em;
+            }
+
+            p {
+                font-size: 0.9em;
+            }
+
+            .download-btn {
+                padding: 8px 15px;
+                font-size: 0.9em;
+            }
+
+            .app-image {
+                max-width: 150px;
+            }
+
+            .language-select select {
+                padding: 8px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Colombia.svg" alt="Bandera de Colombia">
+        <h1 id="main-title">Descarga la app turística de Colombia</h1>
+    </header>
+
+    <section>
+        <h2 id="sub-title">Explora Colombia como nunca antes</h2>
+        <p id="description">
+            Nuestra app orienta a los turistas extranjeros sobre los mejores destinos, recomendaciones
+            culturales, y cómo disfrutar al máximo de la belleza de Colombia. ¡Descárgala ahora y vive
+            una experiencia única en tu viaje!
+        </p>
+        <img src="7799e059-6453-4f55-89e7-23e44aa806ed.jpg" alt="Imagen de la app turística" class="app-image">
+        <br><br>
+        <button class="download-btn" id="download-btn" onclick="window.location.href='https://play.google.com/store/search?q=colombia&c=apps'">Descargar ahora</button>
+        
+        <!-- Language Selector -->
+        <div class="language-select">
+            <label for="language">Selecciona tu idioma: </label>
+            <select id="language" onchange="translatePage()">
+                <option value="es">Español</option>
+                <option value="en">English</option>
+                <option value="fr">Français</option>
+                <option value="de">Deutsch</option>
+            </select>
+        </div>
+    </section>
+
+    <footer>
+        <p id="footer-text">&copy; 2024 Turismo Colombia. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function translatePage() {
+            var language = document.getElementById("language").value;
+
+            var translations = {
+                es: {
+                    title: "Descarga la app turística de Colombia",
+                    subtitle: "Explora Colombia como nunca antes",
+                    description: "Nuestra app orienta a los turistas extranjeros sobre los mejores destinos, recomendaciones culturales, y cómo disfrutar al máximo de la belleza de Colombia. ¡Descárgala ahora y vive una experiencia única en tu viaje!",
+                    button: "Descargar ahora",
+                    footer: "&copy; 2024 Turismo Colombia. Todos los derechos reservados."
+                },
+                en: {
+                    title: "Download Colombia's Tourist App",
+                    subtitle: "Explore Colombia like never before",
+                    description: "Our app guides foreign tourists to the best destinations, cultural recommendations, and how to make the most of Colombia's beauty. Download it now and live a unique experience on your trip!",
+                    button: "Download Now",
+                    footer: "&copy; 2024 Colombia Tourism. All rights reserved."
+                },
+                fr: {
+                    title: "Téléchargez l'application touristique de la Colombie",
+                    subtitle: "Découvrez la Colombie comme jamais auparavant",
+                    description: "Notre application guide les touristes étrangers vers les meilleures destinations, recommandations culturelles, et comment profiter pleinement de la beauté de la Colombie. Téléchargez-la maintenant et vivez une expérience unique lors de votre voyage !",
+                    button: "Télécharger maintenant",
+                    footer: "&copy; 2024 Tourisme Colombie. Tous droits réservés."
+                },
+                de: {
+                    title: "Laden Sie die Tourismus-App von Kolumbien herunter",
+                    subtitle: "Entdecken Sie Kolumbien wie nie zuvor",
+                    description: "Unsere App führt ausländische Touristen zu den besten Zielen, kulturellen Empfehlungen und zeigt, wie man die Schönheit Kolumbiens am besten genießt. Laden Sie sie jetzt herunter und erleben Sie eine einzigartige Reise!",
+                    button: "Jetzt herunterladen",
+                    footer: "&copy; 2024 Tourismus Kolumbien. Alle Rechte vorbehalten."
+                }
+            };
+
+            document.getElementById("main-title").innerHTML = translations[language].title;
+            document.getElementById("sub-title").innerHTML = translations[language].subtitle;
+            document.getElementById("description").innerHTML = translations[language].description;
+            document.getElementById("download-btn").innerHTML = translations[language].button;
+            document.getElementById("footer-text").innerHTML = translations[language].footer;
+        }
+    </script>
+</body>
+</html>
